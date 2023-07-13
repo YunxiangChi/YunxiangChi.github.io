@@ -1,53 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Personal Website</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-
-        header {
-            background-color: #f8f9fa;
-            padding: 10px;
-            text-align: center;
-        }
-
-        main {
-            margin: 15px;
-        }
-
-        footer {
-            background-color: #f8f9fa;
-            text-align: center;
-            padding: 10px;
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-        }
-    </style>
+    <title>Yunxiang Chi - Personal Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
+
 <body>
-    <header>
-        <h1>Your Name</h1>
-        <p>Welcome to my personal website!</p>
-    </header>
+<!-- Navigation bar -->
+<ul class="navbar">
+    <li class="active"><a href="index.html">Home</a></li>
+    <li><a href="resume.html">Resume</a></li>
+    <li><a href="research.html">Research</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="fun_facts.html">Fun Facts</a></li>
+    <li style="float:right"><a id="theme-switcher" href="javascript:void(0)"><i class="fa fa-sun"></i></a></li>
+</ul>
 
-    <main>
-        <h2>About Me</h2>
-        <p>This is where you can introduce yourself.</p>
+<header class="animate__animated animate__fadeInDown">
+    <div class="info">
+        <h1> Yunxiang Chi </h1>
+        <p> B.S. Mathematics-Computer Science </p>
+        <p> B.S. Cognitive Science Machine Learning & Neural Computation </p>
+    </div>
+    <img id="profile-pic" src="./assets/img/Profile_Photo.jpg" alt="Profile Picture">
+</header>
 
-        <h2>My Projects</h2>
-        <p>This is where you can showcase your projects or works.</p>
+<main>
+    <h2 class="animate__animated animate__fadeInRight" data-aos="fade-up">About Me</h2>
+    <p>I'm Yunxiang Chi, a student at the University of California San Diego majoring in Mathematics-Computer Science and Cognitive Science with a specification in Machine Learning and Neural Computation. I'm passionate about developing new technologies and exploring innovative solutions in the field of software and systems engineering. Currently, I'm focused on optimizing scheduler for hardware accelerators in datacenters and developing a new type of protocol for IoT-networking.</p>
 
-        <h2>Contact Me</h2>
-        <p>This is where you can provide your contact information.</p>
-    </main>
+    <h2 class="animate__animated animate__fadeInRight" data-aos="fade-up">Teaching</h2>
+    <p>Details about your teaching...</p>
 
-    <footer>
-        <p>© 2023 Your Name. All rights reserved.</p>
-    </footer>
+    <h2 class="animate__animated animate__fadeInRight" data-aos="fade-up">News</h2>
+    <p>Details about your news...</p>
+
+    <h2 class="animate__animated animate__fadeInRight" data-aos="fade-up">Contact Me</h2>
+    <p>Email: yuchi@ucsd.edu | Phone: (+1) 858-336-6221</p>
+    <p>
+        <a class="contact-btn" href="https://www.linkedin.com/in/yunxiang-chi-953a841b8/" target="_blank">LinkedIn</a>
+        <a class="contact-btn" href="https://github.com/YunxiangChi" target="_blank">GitHub</a>
+    </p>
+</main>
+
+<footer>
+    <p>© 2023 Yunxiang Chi. All rights reserved.</p>
+</footer>
 </body>
+
 </html>

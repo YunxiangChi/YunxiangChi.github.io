@@ -1,0 +1,153 @@
+:root {
+    --background-color: var(--global-bg-color);
+    --text-color: var(--global-text-color);
+    --header-background-color: #fff;
+    --header-border-color: #ccc;
+    --footer-background-color: #f9f9f9;
+    --navbar-background-color: #f3f3f3;
+    --navbar-text-color: var(--global-text-color);
+    --contact-btn-background-color: var(--global-theme-color);
+    --contact-btn-text-color: #fff;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color 0.5s ease;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--header-background-color);
+    padding: 20px 10px;
+    border-bottom: 2px solid var(--header-border-color);
+}
+
+header .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+header .info h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+header .info p {
+    margin: 0;
+    font-size: 1em;
+    color: #666;
+}
+
+#profile-pic {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    box-shadow: 0px 0px 20px rgba(0,0,0,0.1);
+    margin-left: 20px;
+    animation: fadeIn 2s;
+}
+
+main {
+    margin: 15px;
+}
+
+footer {
+    background-color: var(--footer-background-color);
+    text-align: center;
+    padding: 10px;
+    border-top: 2px solid var(--header-border-color);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.contact-btn {
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: var(--contact-btn-background-color);
+    color: var(--contact-btn-text-color);
+    text-decoration: none;
+    border-radius: 3px;
+    transition: background-color 0.3s ease;
+}
+
+.contact-btn:hover {
+    background-color: #303030;
+}
+
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+/* Navigation bar */
+.navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: var(--navbar-background-color);
+}
+
+.navbar li {
+    float: left;
+}
+
+.navbar li a {
+    display: block;
+    color: var(--navbar-text-color);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.navbar li a:hover {
+    background-color: #111;
+}
+
+/* Highlight active section */
+.navbar li.active a {
+    background-color: #111;
+    color: #fff;
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover, .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
