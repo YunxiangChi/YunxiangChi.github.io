@@ -1,46 +1,46 @@
 :root {
-    --background-color: var(--global-bg-color);
-    --text-color: var(--global-text-color);
-    --header-background-color: #fff;
-    --header-border-color: #ccc;
-    --footer-background-color: #f9f9f9;
-    --navbar-background-color: #f3f3f3;
-    --navbar-text-color: var(--global-text-color);
-    --contact-btn-background-color: var(--global-theme-color);
-    --contact-btn-text-color: #fff;
+    --ctp-ext-base: 240, 234, 226;
+    --ctp-ext-text: 104, 88, 80;
+    --footer-background-color: 205, 197, 193;
+    --header-border-color: 212, 205, 200;
+    --contact-btn-background-color: 186, 144, 123;
+    --contact-btn-text-color: 104, 88, 80;
+    --navbar-background-color: 222, 216, 209;
+    --navbar-text-color: 104, 88, 80;
+}
+
+.dark-mode {
+    --ctp-ext-base: 58, 56, 69;
+    --ctp-ext-text: 250, 218, 195;
+    --footer-background-color: 94, 84, 86;
+    --header-border-color: 85, 77, 82;
+    --contact-btn-background-color: 234, 159, 194;
+    --contact-btn-text-color: 250, 218, 195;
+    --navbar-background-color: 76, 70, 78;
+    --navbar-text-color: 250, 218, 195;
 }
 
 body {
     font-family: Arial, sans-serif;
-    background-color: var(--background-color);
-    color: var(--text-color);
-    transition: background-color 0.5s ease;
+    background-color: rgba(var(--ctp-ext-base), 0.9);
+    color: rgb(var(--ctp-ext-text));
+    transition: background-color 0.5s ease, color 0.5s ease;
 }
+
 
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--header-background-color);
+    background-color: rgb(var(--navbar-background-color));
     padding: 20px 10px;
-    border-bottom: 2px solid var(--header-border-color);
+    border-bottom: 2px solid rgba(var(--header-border-color), 1);
+    transition: background-color 0.5s ease;
 }
 
-header .info {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-header .info h1 {
-    font-size: 2em;
-    margin-bottom: 10px;
-}
-
-header .info p {
-    margin: 0;
-    font-size: 1em;
-    color: #666;
+header .info h1, header .info p {
+    color: rgb(var(--ctp-ext-text));
+    transition: color 0.5s ease;
 }
 
 #profile-pic {
@@ -54,24 +54,27 @@ header .info p {
 }
 
 main {
-    margin: 15px;
+    background-color: rgb(var(--ctp-ext-base));
+    color: rgb(var(--ctp-ext-text));
+    transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 footer {
-    background-color: var(--footer-background-color);
+    background-color: rgb(var(--footer-background-color));
     text-align: center;
     padding: 10px;
-    border-top: 2px solid var(--header-border-color);
+    border-top: 2px solid rgba(var(--header-border-color), 1);
     position: fixed;
     bottom: 0;
     width: 100%;
+    transition: background-color 0.5s ease;
 }
 
 .contact-btn {
     margin: 10px;
     padding: 10px 20px;
-    background-color: var(--contact-btn-background-color);
-    color: var(--contact-btn-text-color);
+    background-color: rgb(var(--contact-btn-background-color));
+    color: rgb(var(--contact-btn-text-color));
     text-decoration: none;
     border-radius: 3px;
     transition: background-color 0.3s ease;
@@ -86,13 +89,13 @@ footer {
     100% {opacity: 1;}
 }
 
-/* Navigation bar */
 .navbar {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: var(--navbar-background-color);
+    background-color: rgb(var(--navbar-background-color));
+    transition: background-color 0.5s ease;
 }
 
 .navbar li {
@@ -101,34 +104,34 @@ footer {
 
 .navbar li a {
     display: block;
-    color: var(--navbar-text-color);
+    color: rgb(var(--navbar-text-color));
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    transition: color 0.5s ease;
 }
 
 .navbar li a:hover {
     background-color: #111;
 }
 
-/* Highlight active section */
 .navbar li.active a {
     background-color: #111;
     color: #fff;
 }
 
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
 }
 
 .modal-content {
