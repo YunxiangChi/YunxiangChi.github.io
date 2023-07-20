@@ -1,4 +1,5 @@
 :root {
+    --ctp-ext-bkgd: 245, 239, 231;
     --ctp-ext-base: 240, 234, 226;
     --ctp-ext-text: 104, 88, 80;
     --footer-background-color: 205, 197, 193;
@@ -10,6 +11,7 @@
 }
 
 .dark-mode {
+    --ctp-ext-bkgd: 68, 66, 79;
     --ctp-ext-base: 58, 56, 69;
     --ctp-ext-text: 250, 218, 195;
     --footer-background-color: 94, 84, 86;
@@ -20,12 +22,62 @@
     --navbar-text-color: 250, 218, 195;
 }
 
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    background-color: rgba(var(--ctp-ext-bkgd), 0.9);
+    transition: background-color 0.5s ease;
+}
+
 body {
     font-family: Arial, sans-serif;
-    background-color: rgba(var(--ctp-ext-base), 0.9);
+    border-radius: 10px;
     transition: background-color 0.5s ease;
+    overflow: scroll;
+    background-color: rgba(var(--ctp-ext-base), 0.9);
+}
+
+.navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(var(--navbar-background-color));
+    transition: background-color 0.5s ease;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.navbar li {
+    float: left;
+}
+
+.navbar li a {
+    display: block;
+    color: rgb(var(--navbar-text-color));
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: color 0.5s ease;
+}
+
+.navbar li a:hover, .navbar li.active a {
+    background-color: #111;
+}
+
+.navbar li.active a {
+    color: #fff;
+}
+
+header, main, footer {
+    font-family: Arial, sans-serif;
     border-radius: 10px;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.5s ease;
 }
 
 header {
@@ -33,11 +85,9 @@ header {
     justify-content: space-between;
     align-items: center;
     background-color: rgb(var(--ctp-ext-base));
-    padding: 20px 10px;
+    padding: 10px 15px;
     border-bottom: 2px solid rgba(var(--header-border-color), 1);
-    transition: background-color 0.5s ease;
-    border-radius: 10px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px
 }
 
 header .info h1, header .info p {
@@ -58,11 +108,10 @@ main {
     justify-content: space-between;
     align-items: center;
     background-color: rgb(var(--navbar-background-color));
-    padding: 20px 10px;
+    padding: 10px 15px;
     color: rgb(var(--ctp-ext-text));
-    transition: background-color 0.5s ease, color 0.5s ease;
-    border-radius: 10px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    transition: color 0.5s ease;
+    margin-bottom: 20px
 }
 
 footer {
@@ -70,12 +119,8 @@ footer {
     text-align: center;
     padding: 10px;
     border-top: 2px solid rgba(var(--header-border-color), 1);
-    position: fixed;
     bottom: 0;
-    width: 100%;
-    transition: background-color 0.5s ease;
-    border-radius: 10px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px
 }
 
 .contact-btn {
@@ -84,47 +129,13 @@ footer {
     background-color: rgb(var(--contact-btn-background-color));
     color: rgb(var(--contact-btn-text-color));
     text-decoration: none;
-    border-radius: 3px;
-    transition: background-color 0.3s ease;
     border-radius: 10px;
+    transition: background-color 0.3s ease;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .contact-btn:hover {
     background-color: #303030;
-}
-
-.navbar {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: rgb(var(--navbar-background-color));
-    transition: background-color 0.5s ease;
-    border-radius: 10px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-.navbar li {
-    float: left;
-}
-
-.navbar li a {
-    display: block;
-    color: rgb(var(--navbar-text-color));
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    transition: color 0.5s ease;
-}
-
-.navbar li a:hover {
-    background-color: #111;
-}
-
-.navbar li.active a {
-    background-color: #111;
-    color: #fff;
 }
 
 .close {
